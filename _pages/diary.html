@@ -1,0 +1,20 @@
+---
+layout: archive
+title: "Diary"
+permalink: /diary/
+author_profile: false
+sitemap: false
+robots: noindex
+---
+
+{% include base_path %}
+{% assign diary_posts = site.diary | sort: 'date' | reverse %}
+
+<div id="diary-gate" style="display:none"></div>
+
+<div class="archive">
+  {% for post in diary_posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>
+
