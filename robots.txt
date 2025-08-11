@@ -1,0 +1,9 @@
+---
+layout: null
+sitemap: false
+---
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+
+User-agent: *
+Disallow: /diary/
+

@@ -7,6 +7,9 @@
     for(var i=0;i<questions.length;i++){
       var item = questions[i];
       var reply = window.prompt(item.q + "\n(提示: 不区分大小写)");
+      if(reply === null){
+        return null; // User cancelled
+      }
       if(normalizeAnswer(reply) !== normalizeAnswer(item.a)){
         return false;
       }
@@ -34,12 +37,26 @@
     a.href = 'javascript:void(0)';
     a.setAttribute('data-secret-gate','1');
     a.textContent = label + ' Secret';
+    a.setAttribute('role','button');
+    a.setAttribute('aria-label','Open secret gate');
     a.addEventListener('click', function(){
       var qs = (cfg.questions || []);
-      if(qs.length === 0 || askQuestions(qs)){
+      if(qs.length === 0){
         goToDiary();
-      } else {
+        return;
+      }
+      var result = askQuestions(qs);
+      if(result === true){
+        goToDiary();
+      } else if(result === false){
         alert('回答不正确，再试一次!');
+      }
+      // If result is null, user cancelled, do nothing
+    });
+    a.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        a.click();
       }
     });
     li.appendChild(a);
@@ -55,10 +72,16 @@
         // If user hit the page directly, ask questions once
         var cfg = window.SECRET_GATE || {};
         if(cfg.questions && cfg.questions.length){
-          if(askQuestions(cfg.questions)){
+          var result = askQuestions(cfg.questions);
+          if(result === true){
             sessionStorage.setItem('secret_gate_pass','1');
             return; // allow view
+          } else if(result === null){
+            // User cancelled, redirect to home
+            window.location.replace('/');
+            return;
           }
+          // If result is false, continue to redirect
         }
         window.location.replace('/');
       }
