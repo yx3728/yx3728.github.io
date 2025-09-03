@@ -9,7 +9,7 @@ redirect_from:
 ---
 <br>
 
-Congratulations on finding my little corner of the web! Hello and welcome! I’m Joey, and I’m so glad you’re here. This site is a reflection of my passions, experiences, and aspirations—a space where I hope to connect with like-minded individuals and share my journey.
+Congratulations on finding my little corner of the web! Hello and welcome! I’m Joey, and I’m so glad you’re here. This site is a reflection of my passions, experiences, and aspirations—a space where I hope to connect with like-minded individuals and share my journey. At least, it is what I meant to let it be.
 
 I’m a programming enthusiast with a special love for game development. After earning my Computer Science degree from NC State, I’ve been on an exciting path of continuous learning, growth, and innovation in the tech world.
 

@@ -1,20 +1,19 @@
 ---
-layout: archive
-title: "Diary"
+layout: diary-archive
+title: "我的日记"
 permalink: /diary/
 author_profile: false
 sitemap: false
 robots: noindex
+excerpt: "记录生活中的点点滴滴，分享内心的想法和感受"
 ---
 
 {% include base_path %}
-{% assign diary_posts = site.diary | sort: 'date' | reverse %}
 
 <div id="diary-gate" style="display:none"></div>
 
-<div class="archive">
-  {% for post in diary_posts %}
-    {% include archive-single.html %}
-  {% endfor %}
+<div class="diary-archive__intro">
+  <p>欢迎来到我的日记空间！这里记录着我的生活感悟、学习心得和日常思考。</p>
+  <p><small>💡 提示：通过导航栏的"🔒 Secret"按钮进行验证，验证通过后24小时内无需重复验证。</small></p>
 </div>
 

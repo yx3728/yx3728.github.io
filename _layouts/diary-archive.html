@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <div class="diary-archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <header class="diary-archive__header">
+        <h1 class="diary-archive__title">{{ page.title }}</h1>
+        {% if page.excerpt %}
+          <div class="diary-archive__description">{{ page.excerpt }}</div>
+        {% endif %}
+      </header>
+    {% endunless %}
+    
+    {% include diary-verification-status.html %}
+
+    <div class="diary-archive__content">
+      {{ content }}
+    </div>
+
+    <div class="diary-archive__posts">
+      {% assign diary_posts = site.diary | sort: 'date' | reverse %}
+      
+      {% if diary_posts.size > 0 %}
+        <div class="diary-archive__stats">
+          <span class="diary-archive__count">{{ diary_posts.size }} 篇日记</span>
+        </div>
+        
+        <div class="diary-archive__list">
+          {% for post in diary_posts %}
+            {% include diary-archive-item.html %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="diary-archive__empty">
+          <p>还没有日记内容。</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
