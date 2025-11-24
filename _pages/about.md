@@ -7,20 +7,57 @@ redirect_from:
   - /about/
   - /about.html
 ---
-<br>
+<section class="home-hero">
+  <p class="text-muted">Hi, I’m Joey.</p>
+  <h1>M.S. Computer Science @ NYU · Software Engineer</h1>
+  <p>I build reliable backend systems and large-scale data pipelines with a focus on distributed systems, performance tuning, and developer-friendly tooling.</p>
+  <p>Currently pursuing my M.S. at NYU (GPA 4.0) after graduating from NC State (GPA 3.8), and refining my craft through hands-on infrastructure and platform work.</p>
+</section>
 
-Congratulations on finding my little corner of the web! Hello and welcome! I’m Joey, and I’m so glad you’re here. This site is a reflection of my passions, experiences, and aspirations—a space where I hope to connect with like-minded individuals and share my journey. At least, it is what I meant to let it be.
+<section class="home-experience">
+  <h2>Experience</h2>
+  <article class="experience-card">
+    <h3>Oracle · Software Engineer, Cloud Infrastructure & Platform</h3>
+    <p class="text-muted">May 2024 – Dec 2024 · Redwood City, CA</p>
+    <ul>
+      <li>Optimized Oracle SaaS platform scalability, increasing application delivery speeds by roughly 20% across large enterprise workloads.</li>
+      <li>Helped operate OCI services for 100K+ users with 99.9% uptime through reliability engineering, resilient migrations, and tighter monitoring.</li>
+      <li>Designed CI/CD automation and incident runbooks that cut deployment time ~30% and reduced service downtime by about 8% during critical fixes.</li>
+    </ul>
+  </article>
+</section>
 
-I’m a programming enthusiast with a special love for game development. After earning my Computer Science degree from NC State, I’ve been on an exciting path of continuous learning, growth, and innovation in the tech world.
+<section class="home-education">
+  <h2>Education</h2>
+  <p><strong>New York University</strong> — M.S. Computer Science, Brooklyn, NY (Aug 2024 – May 2026), GPA 4.0/4.0</p>
+  <p><strong>North Carolina State University</strong> — B.S. Computer Science, Raleigh, NC (Aug 2019 – May 2024), GPA 3.8/4.0</p>
+</section>
 
-When I’m not coding, you’ll often find me diving into my other passion—music. Playing the piano and guitar is my go-to for unwinding and expressing creativity. It’s how I find balance amidst the hustle of tech life.
+<section class="home-portfolio">
+  <h2>Featured Projects</h2>
+  <p>Highlights from my recent work in scheduling, systems programming, and data engineering.</p>
+  <div class="project-grid">
+    {% assign featured_projects = site.portfolio | sort: "title" %}
+    {% for project in featured_projects limit:3 %}
+    <article class="project-card">
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      <p class="project-card__subtitle">{{ project.excerpt | strip_html }}</p>
+      <p>{{ project.content | markdownify | strip_html | truncate: 220 }}</p>
+      <a class="btn" href="{{ project.url | relative_url }}">Read more</a>
+    </article>
+    {% endfor %}
+  </div>
+  <p><a href="{{ '/portfolio/' | relative_url }}">View the full portfolio →</a></p>
+</section>
 
-This website is more than just a portfolio; it’s a platform to document my milestones, share insights, and reflect on lessons learned. While the portfolio section might be empty right now, I promise it will feature something exciting very soon—so stay tuned! Through this blog, I hope to inspire, inform, and connect with others who share similar interests. Let’s embark on this journey of growth and discovery together!
+<section class="home-skills">
+  <h2>Core Skills</h2>
+  <p><strong>Languages:</strong> Java, SQL, Python, C, C++</p>
+  <p><strong>Core Competencies:</strong> Distributed systems, REST API design, CI/CD pipelines, multithreading, rigorous testing</p>
+  <p><strong>Tools:</strong> AWS (EMR, EC2), Spark, Docker, Oracle DB, Jenkins, Linux</p>
+</section>
 
-Feel free to explore my portfolio, check out my CV, and reach out through the contact page. Whether you have feedback, ideas, or just want to chat, I’d love to hear from you.
-
-Thanks for stopping by—I hope you enjoy your visit!
-
-Warm regards,
-
-Joey
+<!-- Brief personal note so the page still feels welcoming -->
+<section class="home-closing">
+  <p>Outside of work you’ll usually find me exploring new game mechanics, playing piano, or sharing build logs with friends. Thanks for visiting—reach out if you’d like to collaborate or chat.</p>
+</section>

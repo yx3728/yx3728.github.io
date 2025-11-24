@@ -1,15 +1,4 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
-{% if site.data.secret_gate %}
-  <script>
-    window.SECRET_GATE = {{ site.data.secret_gate | jsonify }};
-  </script>
-{% else %}
-  <script>
-    window.SECRET_GATE = {"title":"🔒","redirect":"/diary/","questions":[]};
-  </script>
-{% endif %}
-<script src="{{ base_path }}/assets/js/secret-gate.js"></script>
-
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}

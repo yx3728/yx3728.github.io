@@ -1,7 +1,11 @@
 ---
-title: "Sudoku Game"
-excerpt: "a Sudoku game using the C programming language, providing a user-friendly interface for gameplay <br/><img src='/images/500x300.png'>"
+title: "Large-Scale Data Pipeline for Model Training"
+excerpt: "Python · Spark · AWS — Processes 50GB+ of data and trims preprocessing time by ~50% for ML workflows.<br/><img src='/images/500x300.png' alt='Data pipeline diagram'>"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+Architected and productionized a Spark-based ETL pipeline on AWS EMR that ingests unstructured sources, cleans them, and readies columnar feature sets for model training.
+
+- Leveraged distributed RDD transformations, fine-grained partitioning, and in-memory caching to keep throughput high as data volume scaled beyond 50GB.
+- Automated data versioning, experiment tracking, and reproducible training scripts so practitioners could move from raw data to features with minimal manual steps.
+- Delivered a ~50% reduction in preprocessing time vs. the previous batch workflow, unlocking faster iteration cycles for downstream ML teams.

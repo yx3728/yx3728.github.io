@@ -1,34 +1,14 @@
 ---
-title: "Neural Networks for Music Classification"
-excerpt: "a Python-based application for classifying musical instruments (e.g., trumpet, violin, piano) from audio samples using neural networks.
- <br/><img src='/images/500x300.png'>"
+title: "Sudoku Solver & Game Engine"
+excerpt: "C · Multithreading — Modular solver and gameplay runtime with ~70% faster generation and 98% solver accuracy.<br/><img src='/images/500x300.png' alt='Sudoku puzzle preview'>"
 collection: portfolio
 ---
 
-<body>
-
-
-    <p>In this project, I developed a neural network model for <strong>musical instrument classification</strong> using deep learning techniques. The goal was to analyze <strong>audio samples</strong> and accurately identify the instrument being played, such as trumpet, violin, or piano.</p>
-
-    <h2>Key Highlights:</h2>
-    <ul>
-        <li><strong>Audio Feature Extraction:</strong> Used <strong>Librosa</strong> to extract Mel Frequency Cepstral Coefficients (MFCCs), a crucial feature for sound analysis.</li>
-        <li><strong>Deep Learning Model:</strong> Built a neural network with <strong>TensorFlow and Keras</strong>, including a fully connected layer with <strong>256 hidden units</strong> and a softmax classifier for multi-class classification.</li>
-        <li><strong>Performance Optimization:</strong> Experimented with <strong>different learning rates, batch sizes, and optimization strategies</strong> to improve accuracy.</li>
-        <li><strong>Energy Efficiency Analysis:</strong> Integrated <strong>Zeus-ML</strong> to measure GPU energy consumption, balancing model performance with computational cost.</li>
-        <li><strong>Achieved Accuracy:</strong> Over <strong>99% validation accuracy</strong>, demonstrating the model's effectiveness in recognizing musical instruments.</li>
-    </ul>
-
-    <p>This project provided hands-on experience with <strong>machine learning for audio processing</strong>, reinforcing my skills in <strong>deep learning, data preprocessing, and model optimization</strong>.</p>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
+<section class="project-detail">
+  <p>Implemented a systems-level Sudoku platform with a constraint engine separated from presentation logic, making it easy to plug in new puzzle generators and debugging tools.</p>
+  <ul>
+    <li>Added a multithreaded workload balancer that parallelizes solving while keeping synchronization costs predictable, trimming puzzle turnaround by ~70%.</li>
+    <li>Built a memory-safe testing harness with 5,000+ generated puzzles, custom leak checks, and high-coverage unit tests to hold accuracy near 98%.</li>
+    <li>Instrumented runtime metrics, letting us tune heuristics quickly during QA and ship stable daily builds.</li>
+  </ul>
+</section>
