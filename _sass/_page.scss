@@ -195,6 +195,26 @@
    Custom home sections
    ========================================================================== */
 
+/* ==========================================================================
+   Language helpers
+   ========================================================================== */
+
+.lang {
+  display: block;
+}
+
+.lang-inline {
+  display: inline;
+}
+
+body[data-lang-active="zh"] .lang-en {
+  display: none;
+}
+
+body:not([data-lang-active="zh"]) .lang-zh {
+  display: none;
+}
+
 .home-hero {
   margin-bottom: 2.5rem;
 
